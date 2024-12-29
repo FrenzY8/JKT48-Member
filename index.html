@@ -77,6 +77,7 @@
             .then(response => response.json())
             .then(data => {
                 const gallery = document.getElementById('gallery');
+                data.reverse();
                 data.forEach(member => {
                     const item = document.createElement('div');
                     item.classList.add('gallery-item');
