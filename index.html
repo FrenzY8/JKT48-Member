@@ -576,25 +576,6 @@
             }
         });
 
-        // Sample data (replace with your fetch)
-        const membersData = [
-            { id: 1, name: "Jisoo", generation: "1st Gen", picture: "/api/placeholder/400/320", graduated: false, trainee: false },
-            { id: 2, name: "Jennie", generation: "1st Gen", picture: "/api/placeholder/400/320", graduated: false, trainee: false },
-            { id: 3, name: "Rosé", generation: "1st Gen", picture: "/api/placeholder/400/320", graduated: false, trainee: false },
-            { id: 4, name: "Lisa", generation: "1st Gen", picture: "/api/placeholder/400/320", graduated: false, trainee: false },
-            { id: 5, name: "Irene", generation: "2nd Gen", picture: "/api/placeholder/400/320", graduated: false, trainee: false },
-            { id: 6, name: "Seulgi", generation: "2nd Gen", picture: "/api/placeholder/400/320", graduated: false, trainee: false },
-            { id: 7, name: "Wendy", generation: "2nd Gen", picture: "/api/placeholder/400/320", graduated: false, trainee: false },
-            { id: 8, name: "Joy", generation: "2nd Gen", picture: "/api/placeholder/400/320", graduated: false, trainee: false },
-            { id: 9, name: "Yeri", generation: "2nd Gen", picture: "/api/placeholder/400/320", graduated: false, trainee: false },
-            { id: 10, name: "Nayeon", generation: "3rd Gen", picture: "/api/placeholder/400/320", graduated: false, trainee: false },
-            { id: 11, name: "Jeongyeon", generation: "3rd Gen", picture: "/api/placeholder/400/320", graduated: true, trainee: false },
-            { id: 12, name: "Momo", generation: "3rd Gen", picture: "/api/placeholder/400/320", graduated: false, trainee: false },
-            { id: 13, name: "Sana", generation: "3rd Gen", picture: "/api/placeholder/400/320", graduated: false, trainee: true },
-            { id: 14, name: "Jihyo", generation: "3rd Gen", picture: "/api/placeholder/400/320", graduated: false, trainee: true }
-        ];
-
-        // Try to fetch data from members.json, fall back to sample data if it fails
         fetch('members.json')
             .then(response => response.json())
             .then(data => {
@@ -602,11 +583,8 @@
                 populateFilters(data);
             })
             .catch(error => {
-                console.error('Error loading member data:', error);
-                // Use sample data as fallback
-                renderGallery(membersData);
-                populateFilters(membersData);
-            });
+            console.error('Error loading member data:', error);
+        });
 
         // Populate filters with unique values
         function populateFilters(data) {
