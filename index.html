@@ -70,6 +70,12 @@
             color: white;
             text-decoration: none;
             transition: color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-menu a i {
+            margin-right: 5px;
         }
 
         .navbar-menu a:hover {
@@ -112,6 +118,27 @@
             margin-right: 10px;
         }
 
+        .reset-btn {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            transition: background-color 0.2s;
+        }
+
+        .reset-btn i {
+            margin-right: 5px;
+        }
+
+        .reset-btn:hover {
+            background-color: #5a2d6d;
+        }
+
         .filter-options {
             display: flex;
             flex-wrap: wrap;
@@ -124,9 +151,16 @@
         }
 
         .filter-group label {
-            display: block;
+            display: flex;
+            align-items: center;
             margin-bottom: 5px;
             font-weight: 500;
+        }
+
+        .filter-group label i {
+            margin-right: 5px;
+            width: 16px;
+            text-align: center;
         }
 
         .filter-group select, .filter-group input {
@@ -142,16 +176,38 @@
             position: relative;
         }
 
-        .search-box i {
+        .search-box i.search-icon {
             position: absolute;
             left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
+            top: 33px;
             color: #777;
         }
 
         .search-box input {
             padding-left: 35px;
+        }
+
+        .apply-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 15px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.2s;
+            align-self: flex-end;
+            margin-top: 25px;
+            display: flex;
+            align-items: center;
+        }
+
+        .apply-btn i {
+            margin-right: 5px;
+        }
+
+        .apply-btn:hover {
+            background-color: var(--secondary);
         }
 
         /* Gallery Styles */
@@ -225,9 +281,14 @@
         }
 
         .member-detail i {
-            width: 25px;
+            width: 18px;
             color: var(--primary);
             margin-right: 8px;
+            text-align: center;
+        }
+
+        .member-detail span.value {
+            margin-left: 5px;
         }
 
         .badge {
@@ -257,6 +318,12 @@
             border-radius: 5px;
             font-weight: bold;
             z-index: 2;
+            display: flex;
+            align-items: center;
+        }
+
+        .member-status i {
+            margin-right: 5px;
         }
 
         .trainee-badge {
@@ -366,6 +433,12 @@
                 font-size: 0.7rem;
                 padding: 3px 6px;
             }
+
+            .apply-btn {
+                width: 100%;
+                justify-content: center;
+                margin-top: 15px;
+            }
         }
 
         /* Mobile menu when active */
@@ -420,37 +493,43 @@
                 <i class="fas fa-undo"></i> Reset
             </button>
         </div>
-        <div class="filter-options">
-            <div class="filter-group search-box">
-                <label for="searchInput"><i class="fas fa-search"></i> Search</label>
-                <input type="text" id="searchInput" placeholder="Search by name...">
+        <form id="filterForm" class="filter-form">
+            <div class="filter-options">
+                <div class="filter-group search-box">
+                    <label for="searchInput"><i class="fas fa-search"></i> Search</label>
+                    <input type="text" id="searchInput" placeholder="Search by name...">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+                <div class="filter-group">
+                    <label for="generationFilter"><i class="fas fa-layer-group"></i> Generation</label>
+                    <select id="generationFilter">
+                        <option value="">All Generations</option>
+                        <!-- Will be populated dynamically -->
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="statusFilter"><i class="fas fa-user-tag"></i> Status</label>
+                    <select id="statusFilter">
+                        <option value="">All Status</option>
+                        <option value="active">Active</option>
+                        <option value="graduated">Graduated</option>
+                        <option value="trainee">Trainee</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="sortBy"><i class="fas fa-sort"></i> Sort By</label>
+                    <select id="sortBy">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="nameAsc">Name (A-Z)</option>
+                        <option value="nameDesc">Name (Z-A)</option>
+                    </select>
+                </div>
+                <button type="submit" id="applyFilters" class="apply-btn">
+                    <i class="fas fa-check"></i> Apply Filters
+                </button>
             </div>
-            <div class="filter-group">
-                <label for="generationFilter"><i class="fas fa-layer-group"></i> Generation</label>
-                <select id="generationFilter">
-                    <option value="">All Generations</option>
-                    <!-- Will be populated dynamically -->
-                </select>
-            </div>
-            <div class="filter-group">
-                <label for="statusFilter"><i class="fas fa-user-tag"></i> Status</label>
-                <select id="statusFilter">
-                    <option value="">All Status</option>
-                    <option value="active">Active</option>
-                    <option value="graduated">Graduated</option>
-                    <option value="trainee">Trainee</option>
-                </select>
-            </div>
-            <div class="filter-group">
-                <label for="sortBy"><i class="fas fa-sort"></i> Sort By</label>
-                <select id="sortBy">
-                    <option value="newest">Newest First</option>
-                    <option value="oldest">Oldest First</option>
-                    <option value="nameAsc">Name (A-Z)</option>
-                    <option value="nameDesc">Name (Z-A)</option>
-                </select>
-            </div>
-        </div>
+        </form>
     </div>
 
     <!-- Gallery -->
@@ -496,21 +575,48 @@
                 navbarMenu.classList.remove('mobile-menu-active');
             }
         });
-        
+
+        // Sample data (replace with your fetch)
+        const membersData = [
+            { id: 1, name: "Jisoo", generation: "1st Gen", picture: "/api/placeholder/400/320", graduated: false, trainee: false },
+            { id: 2, name: "Jennie", generation: "1st Gen", picture: "/api/placeholder/400/320", graduated: false, trainee: false },
+            { id: 3, name: "Rosé", generation: "1st Gen", picture: "/api/placeholder/400/320", graduated: false, trainee: false },
+            { id: 4, name: "Lisa", generation: "1st Gen", picture: "/api/placeholder/400/320", graduated: false, trainee: false },
+            { id: 5, name: "Irene", generation: "2nd Gen", picture: "/api/placeholder/400/320", graduated: false, trainee: false },
+            { id: 6, name: "Seulgi", generation: "2nd Gen", picture: "/api/placeholder/400/320", graduated: false, trainee: false },
+            { id: 7, name: "Wendy", generation: "2nd Gen", picture: "/api/placeholder/400/320", graduated: false, trainee: false },
+            { id: 8, name: "Joy", generation: "2nd Gen", picture: "/api/placeholder/400/320", graduated: false, trainee: false },
+            { id: 9, name: "Yeri", generation: "2nd Gen", picture: "/api/placeholder/400/320", graduated: false, trainee: false },
+            { id: 10, name: "Nayeon", generation: "3rd Gen", picture: "/api/placeholder/400/320", graduated: false, trainee: false },
+            { id: 11, name: "Jeongyeon", generation: "3rd Gen", picture: "/api/placeholder/400/320", graduated: true, trainee: false },
+            { id: 12, name: "Momo", generation: "3rd Gen", picture: "/api/placeholder/400/320", graduated: false, trainee: false },
+            { id: 13, name: "Sana", generation: "3rd Gen", picture: "/api/placeholder/400/320", graduated: false, trainee: true },
+            { id: 14, name: "Jihyo", generation: "3rd Gen", picture: "/api/placeholder/400/320", graduated: false, trainee: true }
+        ];
+
+        // Try to fetch data from members.json, fall back to sample data if it fails
         fetch('members.json')
-        .then(response => response.json())
-        .then(data => {
-        renderGallery(data);
-        populateFilters(data);
-        })
-        .catch(error => {
-        console.error('Error loading member data:', error);
-        });
+            .then(response => response.json())
+            .then(data => {
+                renderGallery(data);
+                populateFilters(data);
+            })
+            .catch(error => {
+                console.error('Error loading member data:', error);
+                // Use sample data as fallback
+                renderGallery(membersData);
+                populateFilters(membersData);
+            });
 
         // Populate filters with unique values
         function populateFilters(data) {
             const genFilter = document.getElementById('generationFilter');
             const generations = [...new Set(data.map(item => item.generation))];
+            
+            // Clear existing options except the first one
+            while (genFilter.options.length > 1) {
+                genFilter.remove(1);
+            }
             
             generations.forEach(gen => {
                 const option = document.createElement('option');
@@ -577,7 +683,10 @@
         }
 
         // Filter and Search functionality
-        function applyFilters() {
+        function applyFilters(event) {
+            // Prevent form submission if event is provided
+            if (event) event.preventDefault();
+            
             const searchTerm = document.getElementById('searchInput').value.toLowerCase();
             const selectedGen = document.getElementById('generationFilter').value;
             const statusFilter = document.getElementById('statusFilter').value;
@@ -639,11 +748,8 @@
             renderGallery(filteredData);
         }
 
-        // Set up event listeners for filters
-        document.getElementById('searchInput').addEventListener('input', applyFilters);
-        document.getElementById('generationFilter').addEventListener('change', applyFilters);
-        document.getElementById('statusFilter').addEventListener('change', applyFilters);
-        document.getElementById('sortBy').addEventListener('change', applyFilters);
+        // Set up event listeners for filter form
+        document.getElementById('filterForm').addEventListener('submit', applyFilters);
         
         // Reset filters
         document.getElementById('resetFilters').addEventListener('click', function() {
