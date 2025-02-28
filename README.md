@@ -1,6 +1,6 @@
 # JKT48 Member
 **The HTML is AI Generated.**
-- This public repository help you to acces into the All Time JKT48 Member, and Current JKT48 Member.
+- This public repository help you to collect the All Time JKT48 Member, and Current JKT48 Member.
 ---
 # All Member:
 - https://raw.githubusercontent.com/FrenzY8/JKT48-Member/refs/heads/main/AllMember.json
