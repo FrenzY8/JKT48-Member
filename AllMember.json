@@ -1116,7 +1116,7 @@
         "name": "Flora Shafiq",
         "picture": "/assets/member/flora_shafiq.jpg",
         "generation": 8,
-        "graduated": false,
+        "graduated": true,
         "trainee": false
     },
     {
