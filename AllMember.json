@@ -465,7 +465,7 @@
         "name": "Shania Gracia",
         "picture": "/assets/member/shania_gracia.jpg",
         "generation": 3,
-        "graduated": false,
+        "graduated": true,
         "trainee": false
     },
     {
