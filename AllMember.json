@@ -462,6 +462,13 @@
         "trainee": false
     },
     {
+        "name": "Shania Gracia",
+        "picture": "/assets/member/shania_gracia.jpg",
+        "generation": 3,
+        "graduated": false,
+        "trainee": false
+    },
+    {
         "name": "Amanda Dwi Arista",
         "picture": "/assets/member/amanda_dwi_arista.jpg",
         "generation": 3,
