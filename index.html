@@ -149,6 +149,7 @@
     statusSelect.addEventListener('change', applyFilters);
     sortSelect.addEventListener('change', applyFilters);
 
+    document.getElementById('sort').value = 'active';
     fetch('./AllMember.json')
       .then(res => res.json())
       .then(data => {
